@@ -1,7 +1,7 @@
 # Week {{N}} Reflection
 
-**Name:**
-**Date:**
+**Name:** 
+**Date:** 
 
 ---
 
@@ -20,7 +20,7 @@
      Part 1 is the link — I will verify the review exists on GitHub.
      Part 2 is your written assessment — what you actually looked at and what you found. -->
 
-**Reviewed:** *(pod mate's name)*
+**Reviewed:** *(pod mate's name)* 
 **Link to my review:**
 
 ### What I Looked At
