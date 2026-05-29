@@ -34,7 +34,7 @@ fun LibraryScreen(
     val items     by viewModel.libraryItems.collectAsState()
     val isLoading by viewModel.isLoading.collectAsState()
 
-    var selectedStatus by remember { mutableStateOf(LibraryStatus.WANT_TO) }
+    val selectedStatus by viewModel.filterState.collectAsState()
     var selectedType   by remember { mutableStateOf("all") }
 
     Column(modifier = Modifier.fillMaxSize()) {
@@ -72,7 +72,7 @@ fun LibraryScreen(
                     shape    = SegmentedButtonDefaults.itemShape(
                         index = index, count = LibraryStatus.values().size),
                     selected = selectedStatus == status,
-                    onClick  = { selectedStatus = status },
+                    onClick  = { viewModel.updateFilter(status) },
                     label    = { Text(stringResource(status.labelRes)) }
                 )
             }
