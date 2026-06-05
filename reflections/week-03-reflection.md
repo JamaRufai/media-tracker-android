@@ -7,9 +7,7 @@
 
 ## Commits This Week
 
-<!-- Paste a link to your commits for this week. The easiest way: go to your repo on GitHub,
-     click "commits", and copy the URL after filtering by your name or branch. -->
-
+https://github.com/JamaRufai/media-tracker-android/pull/2
 **Link:**
 
 ---
