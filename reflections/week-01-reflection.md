@@ -1,7 +1,7 @@
-# Week {{N}} Reflection
+# Week 01 Reflection
 
-**Name:** 
-**Date:** 
+**Name:** Jama Rufai
+**Date:** 5/21/26
 
 ---
 
@@ -10,7 +10,8 @@
 <!-- Paste a link to your commits for this week. The easiest way: go to your repo on GitHub,
      click "commits", and copy the URL after filtering by your name or branch. -->
 
-**Link:**
+**Link:** 
+https://github.com/benjamincassidymetro/media-tracker-android/pull/5
 
 ---
 
@@ -20,39 +21,36 @@
      Part 1 is the link — I will verify the review exists on GitHub.
      Part 2 is your written assessment — what you actually looked at and what you found. -->
 
-**Reviewed:** *(pod mate's name)* 
-**Link to my review:**
+**Reviewed:** *(pod mate's name)* Brian Kayega
+**Link to my review:** https://github.com/Sacchi-X/media-tracker-android/pull/1#discussion_r3285419074
+
 
 ### What I Looked At
 
-<!-- Walk through the code you reviewed. What was the PR trying to do? Which files or
-     functions did you focus on? -->
+He changed the colors from the first UI screen so that it doesn't look flat
 
 ### What I Noticed
 
-<!-- Be specific. Did you spot a potential bug? A pattern that could cause problems? Something
-     done well that you want to call out? "I looked at the ViewModel and everything seemed fine"
-     is not specific enough. Name the thing you noticed and explain why it matters. -->
+I noticed he changed the dependency to true since he was having problem 
+with the emulator earlier today.
 
 ### Comments I Left
 
-<!-- Briefly summarize the comments you left on the PR. If you left a positive comment,
-     say what it was. If you left a suggestion, say what you suggested and why. -->
+It was great to see how he was able to figure out the issue with his emulator.
 
 ---
 
 ## One Thing I Understood More Deeply
 
-<!-- Be specific. Don't write "I learned about ViewModels." Write what specifically clicked —
-     what was confusing before, what made it make sense, and how you'd explain it to someone else.
-     There are no wrong answers here. -->
+I learned that I should take it slowly when I am going into a project 
+that isn't clear and see what I can understand.
 
 ---
 
 ## One Thing I'm Still Confused About
 
-<!-- Be honest. This is the most useful part of the reflection for me — it tells me where to
-     spend more time in class. You will not lose points for being confused. -->
+It was a bit confusing diving into this without any information 
+but it got better as I kept trying.
 
 ---
 

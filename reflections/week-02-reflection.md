@@ -1,7 +1,7 @@
-# Week {{N}} Reflection
+# Week 2 Reflection
 
-**Name:** 
-**Date:** 
+**Name:** Jama Rufai
+**Date:** 5/28/26
 
 ---
 
@@ -11,8 +11,8 @@
      click "commits", and copy the URL after filtering by your name or branch. -->
 
 **Link:**
-
----
+https://github.com/JamaRufai/media-tracker-android/pull/1/changes/de40fb4b306736c9d729052fa73d13af7ed24c96
+https://github.com/JamaRufai/media-tracker-android/pull/1/changes/4327a304c8290f13e4a8d8d4216cf034c4ddbd0f
 
 ## Code Review
 
@@ -20,32 +20,32 @@
      Part 1 is the link — I will verify the review exists on GitHub.
      Part 2 is your written assessment — what you actually looked at and what you found. -->
 
-**Reviewed:** *(pod mate's name)* 
-**Link to my review:**
+**Reviewed:** *(pod mate's name)* Nathan Perfetti
+**Link to my review:** https://github.com/perfettiful/media-tracker-android/pull/2/changes/bd2f31b5d79109e5e69c95d14a53a78a30b1fdb8#r3321759162
 
 ### What I Looked At
 
-<!-- Walk through the code you reviewed. What was the PR trying to do? Which files or
-     functions did you focus on? -->
+Nathan was mostly fixing bugs scattered throughout different files. There were a
+couple of BottomNav and NavGraph to fix routing issues.
 
 ### What I Noticed
 
-<!-- Be specific. Did you spot a potential bug? A pattern that could cause problems? Something
-     done well that you want to call out? "I looked at the ViewModel and everything seemed fine"
-     is not specific enough. Name the thing you noticed and explain why it matters. -->
+The bug that I noticed him fixing was the filter chips that got cut off on smaller
+phones. He made a change and added a horizontal scrolling feature that allows the
+user to see the filter chips.
 
 ### Comments I Left
 
-<!-- Briefly summarize the comments you left on the PR. If you left a positive comment,
-     say what it was. If you left a suggestion, say what you suggested and why. -->
+I left a comment on the horizontal scrolling feature and how it was a great fix.
+
 
 ---
 
 ## One Thing I Understood More Deeply
 
-<!-- Be specific. Don't write "I learned about ViewModels." Write what specifically clicked —
-     what was confusing before, what made it make sense, and how you'd explain it to someone else.
-     There are no wrong answers here. -->
+One thing that clicked for me this week was understanding the hierarchy of a Kotlin Android app. 
+Before, I saw many files but did not know how they connected. 
+Now I understand how the different screens manage the data.
 
 ---
 
