@@ -14,10 +14,17 @@ fun RegisterScreen(
     onRegisterSuccess: () -> Unit,
     onNavigateToLogin: () -> Unit
 ) {
-    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        Text(
-            text = stringResource(edu.metrostate.ics342.mediatracker.R.string.register_not_implemented),
-            style = MaterialTheme.typography.bodyLarge
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(24.dp),
+        verticalArrangement = Arrangement.Center
+    ) {
+        OutlinedTextField(
+            value = "",
+            onValueChange = {},
+            label = { Text("Display Name") },
+            modifier = Modifier.fillMaxWidth()
         )
     }
 }
