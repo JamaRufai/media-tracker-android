@@ -26,7 +26,8 @@ import edu.metrostate.ics342.mediatracker.theme.MediaTrackerTheme
 @Composable
 fun RegisterScreen(
     onRegisterSuccess: () -> Unit,
-    onNavigateToLogin: () -> Unit
+    onNavigateToLogin: () -> Unit,
+    viewModel: RegisterViewModel = viewModel()
 ) {
     var displayName     by remember { mutableStateOf("") }
     var email           by remember { mutableStateOf("") }
