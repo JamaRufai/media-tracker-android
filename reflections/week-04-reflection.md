@@ -7,8 +7,6 @@
 
 ## Commits This Week
 
-<!-- Paste a link to your commits for this week. The easiest way: go to your repo on GitHub,
-     click "commits", and copy the URL after filtering by your name or branch. -->
 
 **Link:**
 
@@ -27,14 +25,17 @@ https://github.com/perfettiful/media-tracker-android/pull/5/changes/772e1d09a977
 
 ### What I Looked At
 
-<!-- Walk through the code you reviewed. What was the PR trying to do? Which files or
-     functions did you focus on? -->
+I reviewed the Register screen changes in the PR. The PR was working on the registration UI and 
+how the screen responds after the user fills out the form. I focused on the state being collected 
+from the ViewModel, the LaunchedEffect that reacts to a successful validation state, 
+and the custom SnackbarHost inside the Scaffold.
 
 ### What I Noticed
 
-<!-- Be specific. Did you spot a potential bug? A pattern that could cause problems? Something
-     done well that you want to call out? "I looked at the ViewModel and everything seemed fine"
-     is not specific enough. Name the thing you noticed and explain why it matters. -->
+One thing I noticed was the use of LaunchedEffect to respond to changes in the registration state. 
+When validation succeeds, the screen automatically displays a Snackbar message and then resets 
+the state so the user can continue interacting with the form. I thought this was a good approach 
+because it keeps the UI responsive to state changes without requiring additional button clicks.
 
 ### Comments I Left
 
@@ -46,23 +47,30 @@ rather than using the default styling.
 
 ## One Thing I Understood More Deeply
 
-<!-- Be specific. Don't write "I learned about ViewModels." Write what specifically clicked —
-     what was confusing before, what made it make sense, and how you'd explain it to someone else.
-     There are no wrong answers here. -->
+Working on the RegisterViewModel helped me better understand how ViewModels act as a bridge between 
+the UI and application logic. Before this week, I understood that ViewModels stored data, 
+but I did not fully understand how user actions triggered updates. 
+While implementing functions such as onEmailChange, onPasswordChange, and onRegisterClick, 
+I saw how user input updates StateFlow values and how the ViewModel controls validation and UI state changes. 
+
 
 ---
 
 ## One Thing I'm Still Confused About
 
-<!-- Be honest. This is the most useful part of the reflection for me — it tells me where to
-     spend more time in class. You will not lose points for being confused. -->
+I am still trying to better understand when logic should be placed inside a ViewModel 
+and when it should be placed somewhere else. I understand why form validation is handled in the RegisterViewModel, 
+but I am not always sure what responsibilities belong in the ViewModel versus the UI.
 
 ---
 
 ## Anything Else *(optional)*
 
-<!-- Did you help a pod mate work through something? Did you discover something cool or frustrating?
-     Did something from a previous week finally click? This is a good place to put it. -->
+Nathan recommended that I try GitHub Desktop to help with merge conflicts. 
+I have not used it yet, but after dealing with some  conflicts this week, 
+I plan to download it and give it a try. One thing that interests me is the ability to visually 
+see the differences between files and better understand which changes are being kept or removed.
+
 
 ---
 
