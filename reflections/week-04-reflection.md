@@ -12,6 +12,7 @@
 
 **Link:**
 
+https://github.com/JamaRufai/media-tracker-android/pull/3/commits
 ---
 
 ## Code Review
@@ -22,6 +23,7 @@
 
 **Reviewed:** *(pod mate's name)* Nathan Perfetti
 **Link to my review:**
+https://github.com/perfettiful/media-tracker-android/pull/5/changes/772e1d09a977451ff3992045d1ba4ba8317c430d#r3400174483
 
 ### What I Looked At
 
@@ -36,9 +38,10 @@
 
 ### Comments I Left
 
-<!-- Briefly summarize the comments you left on the PR. If you left a positive comment,
-     say what it was. If you left a suggestion, say what you suggested and why. -->
-
+I left a positive comment on the snackbar customization. I mentioned that using theme colors 
+and a rounded shape provides a more consistent user experience throughout the app. 
+These design choices help the notifications feel integrated with the rest of the interface 
+rather than using the default styling.
 ---
 
 ## One Thing I Understood More Deeply
