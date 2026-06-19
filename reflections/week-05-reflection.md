@@ -11,6 +11,7 @@
      click "commits", and copy the URL after filtering by your name or branch. -->
 
 **Link:**
+https://github.com/JamaRufai/media-tracker-android/pull/4/commits
 
 ---
 
@@ -22,37 +23,49 @@
 
 **Reviewed:** Nathan Perfetti
 **Link to my review:**
+https://github.com/perfettiful/media-tracker-android/pull/6/changes#r3439823612
 
 ### What I Looked At
 
-<!-- Walk through the code you reviewed. What was the PR trying to do? Which files or
-     functions did you focus on? -->
+I reviewed AuthViewModel.kt, which is responsible for handling the login process and managing 
+the authentication state for the UI. I focused on the AuthUiState sealed class, 
+the onLoginClick() function, and how the ViewModel communicates with the UserRepository 
+to process login requests. I also looked at how errors and success states are handled 
+and how the ViewModel is created using the factory pattern.
 
 ### What I Noticed
 
-<!-- Be specific. Did you spot a potential bug? A pattern that could cause problems? Something
-     done well that you want to call out? "I looked at the ViewModel and everything seemed fine"
-     is not specific enough. Name the thing you noticed and explain why it matters. -->
+I noticed that the login state is handled clearly with Idle, Loading, Success, and Error. 
+This makes it easier for the UI to know what to show during login. I also noticed that the email 
+is trimmed before logging in, which helps prevent login issues caused by extra spaces. 
+Another good part is that empty email or password fields are checked before the API call, 
+so the app does not make an unnecessary network request.
 
 ### Comments I Left
 
-<!-- Briefly summarize the comments you left on the PR. If you left a positive comment,
-     say what it was. If you left a suggestion, say what you suggested and why. -->
+I left a positive comment noting that the Retrofit configuration is clean and easy to understand. 
+I also mentioned that using ignoreUnknownKeys helps make the app more resilient to API changes and 
+that the logging interceptor will be helpful when troubleshooting network issues.
 
 ---
 
 ## One Thing I Understood More Deeply
 
-<!-- Be specific. Don't write "I learned about ViewModels." Write what specifically clicked —
-     what was confusing before, what made it make sense, and how you'd explain it to someone else.
-     There are no wrong answers here. -->
+I have a better understanding of how a ViewModel manages UI state during an API request. 
+Before, I knew that ViewModels stored data and helped preserve state during configuration changes, 
+but I was not completely sure how they handled different stages of a login process. 
+Looking at the AuthUiState sealed class helped me see how the ViewModel can switch between states 
+like Loading, Success, and Error while the UI reacts to those changes. It also helped me understand 
+why separating these states makes the code easier to maintain and debug.
 
 ---
 
 ## One Thing I'm Still Confused About
 
-<!-- Be honest. This is the most useful part of the reflection for me — it tells me where to
-     spend more time in class. You will not lose points for being confused. -->
+I am still a little confused about what happens inside the UserRepository after the login() function is called. 
+From this file, I can see that the ViewModel sends the email and password to the repository and receives a result back, 
+but I cannot see exactly how the network request is made or how the response is processed. 
+I would like to learn more about what happens between the repository and the API service so I can better understand the full login flow.
 
 ---
 
