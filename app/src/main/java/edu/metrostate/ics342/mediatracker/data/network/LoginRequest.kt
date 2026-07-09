@@ -10,4 +10,3 @@ data class LoginRequest(
     val clientId: String,
     val clientSecret: String
 )
-
