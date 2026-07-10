@@ -105,7 +105,7 @@ object FakeMediaRepository {
      */
     val sampleMediaDetail = MediaDetail(
         id            = 1080,
-        mediaType     = MediaType.MOVIE,
+        mediaType     = "movie",
         title         = "Dune: Part Two",
         director      = "Denis Villeneuve",
         coverUrl      = "https://image.tmdb.org/t/p/w300/heM4XKC0jA8fTSNe8F7oUkcJV7Z.jpg",

@@ -19,7 +19,6 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import edu.metrostate.ics342.mediatracker.R
 import edu.metrostate.ics342.mediatracker.data.model.Media
-import edu.metrostate.ics342.mediatracker.data.model.MediaType
 import edu.metrostate.ics342.mediatracker.data.model.creatorCredit
 import edu.metrostate.ics342.mediatracker.theme.MovieContainer
 import edu.metrostate.ics342.mediatracker.theme.OnMovieContainer
@@ -71,14 +70,14 @@ fun MediaResultCard(
             verticalAlignment = Alignment.CenterVertically
         ) {
             val containerColor = when (media.mediaType) {
-                MediaType.BOOK              -> MaterialTheme.colorScheme.primaryContainer
-                MediaType.MOVIE             -> MovieContainer
-                MediaType.SHOW, MediaType.UNKNOWN -> MaterialTheme.colorScheme.secondaryContainer
+                "book"  -> MaterialTheme.colorScheme.primaryContainer
+                "movie" -> MovieContainer
+                else    -> MaterialTheme.colorScheme.secondaryContainer
             }
             val iconTint = when (media.mediaType) {
-                MediaType.BOOK              -> MaterialTheme.colorScheme.onPrimaryContainer
-                MediaType.MOVIE             -> OnMovieContainer
-                MediaType.SHOW, MediaType.UNKNOWN -> MaterialTheme.colorScheme.secondary
+                "book"  -> MaterialTheme.colorScheme.onPrimaryContainer
+                "movie" -> OnMovieContainer
+                else    -> MaterialTheme.colorScheme.secondary
             }
 
             Box(
@@ -90,9 +89,9 @@ fun MediaResultCard(
             ) {
                 Icon(
                     painter = painterResource(when (media.mediaType) {
-                        MediaType.BOOK              -> R.drawable.menu_book_24px
-                        MediaType.MOVIE             -> R.drawable.movie_24px
-                        MediaType.SHOW, MediaType.UNKNOWN -> R.drawable.tv_24px
+                        "book"  -> R.drawable.menu_book_24px
+                        "movie" -> R.drawable.movie_24px
+                        else    -> R.drawable.tv_24px
                     }),
                     contentDescription = null,
                     modifier = Modifier.size(32.dp),
@@ -122,7 +121,7 @@ fun MediaResultCard(
                 Text(
                     text = buildString {
                         append("★ ${"%.1f".format(media.averageRating)}")
-                        append(" · ${media.mediaType.displayName}")
+                        append(" · ${media.mediaType.replaceFirstChar { it.uppercase() }}")
                         media.publishedYear?.let { append(" · $it") }
                     },
                     style = MaterialTheme.typography.labelSmall,
