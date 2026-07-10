@@ -41,6 +41,88 @@ import kotlin.math.roundToInt
 fun MediaDetailScreen(
     mediaId: Int,
     onNavigateBack: () -> Unit,
+    onWriteReview: (Int) -> Unit,
+    viewModel: MediaDetailViewModel = viewModel()
+) {
+    val uiState by viewModel.uiState.collectAsState()
+
+    LaunchedEffect(mediaId) { viewModel.load(mediaId) }
+
+    Column(modifier = Modifier.fillMaxSize()) {
+        TopAppBar(
+            title = {},
+            navigationIcon = {
+                IconButton(onClick = onNavigateBack) {
+                    Icon(
+                        Icons.AutoMirrored.Outlined.ArrowBack,
+                        contentDescription = stringResource(R.string.action_back)
+                    )
+                }
+            },
+            actions = {
+                IconButton(onClick = { /* TODO: overflow menu */ }) {
+                    Icon(
+                        Icons.Outlined.MoreVert,
+                        contentDescription = stringResource(R.string.action_more_options)
+                    )
+                }
+            }
+        )
+
+        when (val state = uiState) {
+            is MediaDetailUiState.Loading -> {
+                Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                    CircularProgressIndicator()
+                }
+            }
+
+            is MediaDetailUiState.NotFound -> {
+                Box(
+                    Modifier.fillMaxSize().padding(32.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        text  = stringResource(R.string.detail_not_found),
+                        style = MaterialTheme.typography.bodyLarge,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+            }
+
+            is MediaDetailUiState.Error -> {
+                Box(
+                    Modifier.fillMaxSize().padding(32.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text(
+                            text  = state.message,
+                            style = MaterialTheme.typography.bodyLarge,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                        Spacer(Modifier.height(16.dp))
+                        Button(onClick = { viewModel.load(mediaId) }) {
+                            Text(stringResource(R.string.detail_retry))
+                        }
+                    }
+                }
+            }
+
+            is MediaDetailUiState.Success -> {
+                SuccessContent(
+                    state         = state,
+                    onAddToLibrary = { viewModel.addToLibrary() },
+                    onWriteReview  = onWriteReview
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun SuccessContent(
+    state: MediaDetailUiState.Success,
+    onAddToLibrary: () -> Unit,
     onWriteReview: (Int) -> Unit
 ) {
     // Not wired to the API yet — show the hardcoded MediaDetail sample.
